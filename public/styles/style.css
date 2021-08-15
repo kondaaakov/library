@@ -1,0 +1,699 @@
+/*
+Шрифт для контента статей:
+font-family: 'Bona Nova', serif;
+
+Шрифт для заголовков:
+font-family: 'Montserrat', sans-serif;
+
+Базовый шрифт:
+font-family: 'Open Sans', sans-serif;
+
+Шрифт для кода:
+font-family: 'JetBrains Mono', monospace;
+*/
+
+/* РАЗДЕЛЫ СТИЛЕЙ
+1. Служебные стили. Базовые стили базовых элементов или сброс стилей.
+2. Стили базовых классов. Хедер, футер и т.д.
+3...N. Стили по разделам.
+*/
+
+.tippy-box[data-theme~='our'] {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 1. СЛУЖЕБНЫЕ СТИЛИ */
+* {
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    border-bottom: 2px solid #4c51ff;
+    transition: 0.3s all;
+}
+
+a:hover {
+    color: #4c51ff;
+}
+
+input, button, textarea {
+    outline: none;
+    border: 3px solid #4c51ff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+
+input {
+    padding: 5px;
+}
+
+input[readonly] {
+    position: relative;
+    background-color: #e7e7e7;
+}
+
+button {
+    padding: 5px 10px;
+    font-weight: 700;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+button:hover {
+    color: #4c51ff;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+textarea {
+    resize: none;
+    font-family: 'Bona Nova', serif;
+    font-size: 1.2em;
+    padding: 10px;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+    padding: 0 calc(50% - 600px);
+}
+
+.hidden {
+    visibility: hidden;
+}
+/* 1. КОНЕЦ */
+
+/* 2. СТИЛИ БАЗОВЫХ КЛАССОВ */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4c51ff;
+    height: 100px;
+    border: none;
+}
+
+.header_link {
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: white;
+    font-size: 1.3em;
+    margin: 10px;
+    padding: 5px;
+}
+
+.header_link:hover, .footer_nav_link:hover, .footer_user_link:hover {
+    color: #d9d9d9;
+}
+
+.header_img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.container {
+    min-height: calc(100vh - 160px);
+}
+
+.container_error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error_title {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+}
+
+.error_link {
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    grid-column: 1/2;
+    grid-row: 5/6;
+    color: #9baacf;
+    padding: 5px 10px;
+    border: none;
+}
+
+.error_link:hover {
+    color: #4c51ff;
+}
+
+.error_link:active {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
+}
+
+.footer {
+    background-color: #4c51ff;
+    height: 80px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_user_link, .header_user_link {
+    display: flex;
+    align-items: center;
+}
+
+.footer_nav_link, .footer_user_link {
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+}
+
+.footer_nav_img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.header_page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #4c51ff;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-bottom: 50px;
+}
+
+.header_page_title {
+    font-size: 2em;
+    color: white;
+}
+
+.header_page_subtitle {
+    font-size: 1.5em;
+    color: white;
+}
+
+.header_page_img {
+    width: 100%;
+}
+
+.header_page_text {
+    width: 100%;
+    font-family: 'Bona Nova', serif;
+    color: white;
+    font-size: 1.3em;
+    text-align: justify;
+}
+/* 2. КОНЕЦ */
+
+/* 3. СТРАНИЦЫ АВТОРИЗАЦИИ И РЕГИСТРАЦИИ */
+.auth, .reg {
+    padding: 0 calc(50% - 250px);
+}
+
+.auth_form, .reg_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth_input, .reg_input {
+    margin-bottom: 15px;
+}
+
+.reg_form_middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reg_form_middle .reg_input {
+    width: 45%;
+}
+
+.auth_form_bottom, .reg_form_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth_alert, .reg_alert {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f44336;
+    font-weight: 600;
+}
+
+.reg_alert {
+    text-align: left;
+    font-style: italic;
+}
+
+.reg_alert::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    margin-right: 5px;
+    font-style: normal;
+}
+/* 3. КОНЕЦ */
+
+/* 4. СТРАНИЦА КНИГ И ОДНОЙ КНИГИ */
+
+.books {
+
+}
+
+.books_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.books_bottom {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.books_container {
+
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 4px solid #4c51ff;
+}
+
+.book_title {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.book_authors {
+    margin-bottom: 10px;
+}
+
+.book_content {
+    display: flex;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4c51ff;
+}
+
+.book_cover {
+    width: 15%;
+    margin-right: 15px;
+    height: 235px;
+}
+
+.book_description {
+    text-align: justify;
+    font-size: 1.3em;
+    font-family: 'Bona Nova', serif;
+}
+
+.book_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book_bold, .allbooks_bold {
+    font-weight: 600;
+}
+
+.allbooks {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 4px solid #4c51ff;
+}
+
+.allbooks_title {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.allbooks_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allbooks_delete:hover {
+    color: #f44336;
+}
+
+.books_form {
+    padding: 0 calc(50% - 250px);
+    display: flex;
+    flex-direction: column;
+}
+
+.books_form_textarea {
+    text-align: justify;
+}
+
+.books_form_input, .books_form_textarea, .personal_input {
+    margin-bottom: 15px;
+}
+
+.onebook_header_page_title {
+    font-size: 3em;
+}
+
+.onebook_small {
+    font-size: 0.3em;
+    color: #c6c6c6;
+}
+
+.onebook_header_page_img {
+    width: 70%;
+}
+
+.onebook_header_page_text {
+    font-size: 1em;
+}
+
+.onebook_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 160px;
+    gap: 15px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.onebook_chapter {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #4c51ff;
+}
+
+.onebook_chapter_title {
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.onebook_chapter_block {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.onebook_code {
+    padding: 20px;
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    border-left: 4px solid #4c51ff;
+    background-color: rgba(76, 81, 255, 0.09);
+}
+
+.createchapter_container {
+    padding: 0 calc(50% - 250px);
+}
+
+.createchapter_text {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.createchapter_bold {
+    font-weight: 700;
+}
+
+.createchapter_form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.createchapter_input, .createchapter_textarea {
+    margin-bottom: 15px;
+}
+
+.createchapter_textarea {
+    height: 500px;
+}
+
+/* 4.КОНЕЦ */
+
+/* 4.1 СТИЛИ ГЛАВ, ВОПРОСОВ И ЗАДАНИЙ */
+.chapter_container {
+
+}
+
+.chapter_title {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #4c51ff;
+}
+
+.chapter_title_h4 {
+    display: inline-block;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 3px dotted #4c51ff;
+}
+
+.chapter_title_h4::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    margin-right: 5px;
+    font-style: normal;
+}
+
+.chapter_block {
+    margin-bottom: 15px;
+}
+
+.chapter_content {
+    padding-left: 15px;
+    border-left: 5px solid #4c51ff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.chapter_question {
+    margin-bottom: 10px;
+    border: none;
+}
+
+.task_block {
+    padding: 0 calc(50% - 300px);
+}
+
+.task_title {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #4c51ff;
+    font-size: 1.4em;
+}
+
+.task_question {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.3em;
+}
+
+.task_number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.task_answer {
+    font-family: 'Bona Nova', serif;
+    text-align: justify;
+    font-size: 1.3em;
+}
+
+.answer_list_li {
+    text-align: justify;
+    font-family: 'Bona Nova', serif;
+    margin-bottom: 5px;
+}
+
+.answer_text_code {
+    font-size: 0.8em;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #e1e1e1;
+    color: #f44336;
+    padding: 1px 8px;
+    border-radius: 10px;
+}
+/* 4.1 КОНЕЦ */
+
+
+/* 5. СТИЛИ ЛИЧНОГО КАБИНЕТА */
+.personal {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 390px 390px;
+    gap: 15px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.personal_card {
+    border: 3px solid #4c51ff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal_cart_title {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    border-bottom: 3px solid #4c51ff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.personal_card_top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #4c51ff;
+    margin-bottom: 10px;
+}
+
+.personal_img {
+    width: 128px;
+    height: 128px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.personal_card_top_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personal_name {
+    font-size: 1.3em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.personal_login {
+    display: inline-block;
+    border-bottom: 2px dotted #4c51ff;
+    padding: 0 5px 5px 5px;
+}
+
+.personal_card_middle {
+    margin-bottom: auto;
+}
+
+.personal_role, .personal_email {
+    margin-bottom: 5px;
+}
+
+.personal_bold {
+    font-weight: 700;
+}
+
+.personal_bold_user {
+    color: #8f8f8f;
+}
+
+.personal_bold_admin {
+    color: #f44336;
+}
+
+.personal_bold_blocked {
+    text-decoration: line-through;
+}
+
+.personal_card_bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.personal_form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.personal_form_bottom {
+    margin-top: auto;
+    text-align: right;
+}
+/* 5. КОНЕЦ */
+
+/* 6. СТИЛИ ЛОГОВ */
+.logs {
+    display: flex;
+    flex-direction: column;
+}
+
+.log {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 4px solid #4c51ff;
+}
+
+.log_category {
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Bona Nova', serif;
+}
+
+.log_text {
+    width: 100%;
+    font-family: 'Bona Nova', serif;
+    text-align: justify;
+}
+/* 6. КОНЕЦ */
